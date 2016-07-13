@@ -7,7 +7,7 @@ public class Cell extends JButton {
     private boolean _beenAlive = false;
 
     private int _maxSize = 10000;
-    
+
     public Cell() {
 	super(" ");
 	setFont(new Font("Courier", Font.PLAIN, 12));
@@ -29,26 +29,22 @@ public class Cell extends JButton {
 	resetBeenAlive();
 	setAlive(false);
     }
-    
+
     public boolean getAlive() {
 	String text = getText();
 	return (text.equals("X"));
     }
 
     public String toString() {
-	String toReturn = new String("");
 	String currentState = getText();
-	for (int j = 0; j < _maxSize; j++) {
-	    toReturn += currentState;
-	}
-	if (toReturn.substring(0,1).equals("X")) {
-	    return toReturn.substring(0,1);
+	if (currentState.equals("X")) {
+	    return currentState;
 	} else {
 	    return ".";
 	}
 
     }
-    
+
     public void setAlive(boolean a) {
 	// note that "if (a)" and "if (a == true)"
 	// really say the same thing!
@@ -86,7 +82,7 @@ public class Cell extends JButton {
 		setAlive(false);
 	    }
 	}
-    
+
     }
 
 }
